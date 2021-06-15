@@ -1,0 +1,3 @@
+interface ICreateCategoryDTO{
+  name: string;
+}

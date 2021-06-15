@@ -1,0 +1,210 @@
+{
+  "openapi":"3.0.0",
+  "info":{
+    "title":"Devices Manager Documentation",
+    "description":"This is an API to Devices Manager",
+    "version":"1.0.0",
+    "contact":{
+      "email":"ismael.dev@gmail.com"
+    }
+  },
+  "paths":{
+    "/categories":{
+      "post":{
+        "tags":["Category"],
+        "summary":"Create a category",
+        "description":"Create a new category",
+        "requestBody":{
+          "content":{
+            "application/json":{
+              "schema":{
+                "type":"object",
+                "properties":{
+                  "name":{
+                    "type":"string"
+                  }
+                }
+              },
+              "example":{
+                "name":"Teste 1"
+              }
+            }
+          }
+        },
+        "responses":{
+          "201":{
+            "description":"Created"
+          },
+          "500":{
+            "description":"Category already exists!"
+          }
+        }
+      },
+      "get":{
+        "tags":["Category"],
+        "summary":"List all categories",
+        "description":"List all categories",
+        "responses":{
+          "200":{
+            "description":"Success",
+            "content":{
+              "application/json":{
+                "schema":{
+                  "type":"array",
+                  "items":{
+                    "type":"object",
+                    "properties":{
+                      "name":{
+                        "type":"string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500":{
+            "description":"Internal server error"
+          }
+        }
+      },
+      "delete":{
+        "tags":["Category"],
+        "summary":"Delete a category",
+        "description":"Delete a category",
+        "requestBody":{
+          "content":{
+            "application/json":{
+              "schema":{
+                "type":"object",
+                "properties":{
+                  "id":{
+                    "type":"number"
+                  }
+                }
+              },
+              "example":{
+                "id": 1
+              }
+            }
+          }
+        },
+        "responses":{
+          "201":{
+            "description":"Deleted"
+          },
+          "500":{
+            "description":"Delete fail!"
+          }
+        }
+      }
+    },
+    "/devices":{
+      "post":{
+        "tags":["Device"],
+        "summary":"Create a device",
+        "description":"Create a new device",
+        "requestBody":{
+          "content":{
+            "application/json":{
+              "schema":{
+                "type":"object",
+                "properties":{
+                  "idCategory":{
+                    "type":"number"
+                  },
+                  "color":{
+                    "type":"string"
+                  },
+                  "partNumber":{
+                    "type":"string"
+                  }
+                }
+              },
+              "example":{
+                "idCategory":1,
+                "color":"red",
+                "partNumber":"AA20210615"
+              }
+            }
+          }
+        },
+        "responses":{
+          "201":{
+            "description":"Created"
+          },
+          "500":{
+            "description":"Device already exists!"
+          }
+        }
+      },
+      "get":{
+        "tags":["Device"],
+        "summary":"List all devices",
+        "description":"List all devices",
+        "responses":{
+          "200":{
+            "description":"Success",
+            "content":{
+              "application/json":{
+                "schema":{
+                  "type":"array",
+                  "items":{
+                    "type":"object",
+                    "properties":{
+                      "id":{
+                        "type":"number"
+                      },
+                      "idCategory":{
+                        "type":"number"
+                      },
+                      "color":{
+                        "type":"string"
+                      },
+                      "partNumber":{
+                        "type":"string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500":{
+            "description":"Internal server error"
+          }
+        }
+      },
+      "delete":{
+        "tags":["Device"],
+        "summary":"Delete a device",
+        "description":"Delete a device",
+        "requestBody":{
+          "content":{
+            "application/json":{
+              "schema":{
+                "type":"object",
+                "properties":{
+                  "id":{
+                    "type":"number"
+                  }
+                }
+              },
+              "example":{
+                "id": 1
+              }
+            }
+          }
+        },
+        "responses":{
+          "201":{
+            "description":"Deleted"
+          },
+          "500":{
+            "description":"Delete fail!"
+          }
+        }
+      }
+    }
+  }
+}
