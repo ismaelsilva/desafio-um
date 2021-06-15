@@ -1,4 +1,5 @@
 import { inject, injectable } from "tsyringe";
+import { AppErros } from "../../../../erros/AppErros";
 import { IDevicesRepository } from "../../repositories/interfaces/IDevicesRepository";
 
 interface IRequest{
@@ -18,7 +19,7 @@ class CreateDeviceUseCase{
     const deviceAlreadyExists = await this.devicesRepository.findByPartNumber(partNumber);
     
     if(deviceAlreadyExists){
-      throw new Error("Device already exists!");
+      throw new AppErros("Device already exists!", 401);
     }
     await this.devicesRepository.create({ idCategory, color, partNumber });
   }
