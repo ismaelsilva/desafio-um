@@ -4,8 +4,8 @@ Estrutura do Projeto
 =================
 <!--ts-->
    * [Sobre](#sobre)
-   * [Web](#web)
    * [API](#api)
+   * [Web](#web)
    * [Como usar](#como-usar)
       * [Pre Requisitos](#pré-requisitos)
       * [Intruções](#instruções)
@@ -16,16 +16,15 @@ Sobre
 =================
 Desafio para Desenvolvedor Web FullStack
 
-Web
-=================
-Site para consultar a Aplicação Web:
-*Não finalizado, portanto não foi implementado*
-
 API
 =================
 Site para consultar a API:
 http://ec2-18-212-254-181.compute-1.amazonaws.com:3333/api-docs/
 
+Web
+=================
+Site para consultar a Aplicação Web:
+*Não finalizado, portanto não foi implementado*
 
 Como usar
 =================
