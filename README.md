@@ -19,7 +19,7 @@ Desafio para Desenvolvedor Web FullStack
 Web
 =================
 Site para consultar a Aplicação Web:
-*Não finalizando, portanto não foi implementado*
+*Não finalizado, portanto não foi implementado*
 
 API
 =================
